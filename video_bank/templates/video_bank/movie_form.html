@@ -1,0 +1,17 @@
+{% extends 'video_bank/base.html'%}
+
+{% block content %}
+
+<!-- Page Heading -->
+     <h1 class="my-4">Add a Movie </h1>
+
+
+
+     <div class="row">
+         <form class="" action="." method="post" enctype="multipart/form-data">{% csrf_token %}
+
+            {{ form.as_p}}
+            <input type="submit" name="btnAddMovie" value="Add">
+        </form>
+    </div>
+{% endblock %}

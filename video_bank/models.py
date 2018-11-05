@@ -26,11 +26,11 @@ class Movie(models.Model):
     country = models.CharField(max_length=100)
     director = models.CharField(max_length=100)
     length = models.CharField(max_length=50)
-    picture = models.ImageField(upload_to='movie_picture',blank=True)
+    picture = models.ImageField(upload_to='movie_picture',default="/no-image-icon-4.png")
     release_date = models.DateField()
     rented = models.BooleanField(default=False)
     genre = models.ManyToManyField("MovieGenre", blank=True)
-    trailer_url = models.URLField()
+    trailer_url = models.URLField(blank=True)
 
     def __unicode__(self):
         return "%s release %s" %(self.title, self.release_date)

@@ -37,5 +37,5 @@ class MovieRentAdmin(admin.ModelAdmin):
 
 
 admin.site.register(MovieGenre, MovieGenreAdmin)
-admin.site.register(Movie)
+admin.site.register(Movie, MovieAdmin)
 admin.site.register(MovieRent, MovieRentAdmin)

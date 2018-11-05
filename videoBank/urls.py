@@ -15,7 +15,24 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
+
+from django.contrib.auth import views as auth_views
+from django.shortcuts import render, redirect
+
+from video_bank.views import *
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-]
+
+    url(r'^$', IndexView.as_view(), name="index"),
+
+    url(r'^movie/create/$', MovieCreateView.as_view(), name="movie_create"),
+    url(r'^movie/(?P<slug>[\w-]+)/$', MovieDetailView.as_view(), name="movie_detail"),
+    url(r'^movie/(?P<slug>[\w-]+)/edit/$', MovieUpdate.as_view(), name="movie_update"),
+    url(r'^movie/(?P<slug>[\w-]+)/remove/$', MovieRemoveView.as_view(), name="movie_remove"),
+
+
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
