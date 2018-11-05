@@ -37,7 +37,24 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+
+    'userena',
+    'guardian',
+    'easy_thumbnails',
+
+    'video_bank',
+
 ]
+
+AUTHENTICATION_BACKENDS = (
+'userena.backends.UserenaAuthenticationBackend',
+'guardian.backends.ObjectPermissionBackend',
+'django.contrib.auth.backends.ModelBackend',
+)
+ANONYMOUS_USER_NAME = 'anonymous'
+
+AUTH_PROFILE_MODULE = 'video_bank.Customer'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -103,7 +120,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fr-fr'
 
 TIME_ZONE = 'UTC'
 
@@ -118,3 +135,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+            
+MEDIA_URL = '/media/'
+
+STATICFILES_DIRS = [
+   os.path.join(BASE_DIR, "node_modules"),
+]
+
+LOGIN_URL = '/login'
+SITE_ID = 1
+
+USE_DJANGO_JQUERY = True
