@@ -3,7 +3,7 @@ from django.urls import reverse, reverse_lazy
 # from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.views.generic.edit import CreateView, UpdateView, DeleteView, View
 
-from .models import Movie
+from .models import Movie , Customer
 
 
 class MovieCreateView(CreateView):
@@ -25,3 +25,11 @@ class MovieUpdate(UpdateView):
 class MovieRemoveView(DeleteView):
     model = Movie
     success_url = reverse_lazy('index')
+
+
+class CustomerCreateView(CreateView):
+    model = Customer
+    fields = "__all__"
+
+    # def get_success_url(self):
+    #     return reverse('customer_detail', args=[self.object.slug])

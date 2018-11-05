@@ -1,0 +1,20 @@
+{% extends 'video_bank/base.html'%}
+
+{% block content %}
+
+<!-- Page Heading -->
+    <h1 class="my-4 text-center">Login</h1>
+    <div class="row justify-content-center ">
+        <form action="." method="post" class="login">
+            {% csrf_token %}
+            <input type="hidden" name="next" value="/">
+            {{ form.username.label }}
+            {{ form.username }}
+
+            {{ form.password.label }}
+            {{ form.password }}
+            <button type="submit">Login</button>
+        </form>
+
+    </div>
+{% endblock %}

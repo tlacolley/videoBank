@@ -38,23 +38,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'video_bank',
 
     'userena',
     'guardian',
     'easy_thumbnails',
 
-    'video_bank',
 
 ]
 
-AUTHENTICATION_BACKENDS = (
-'userena.backends.UserenaAuthenticationBackend',
-'guardian.backends.ObjectPermissionBackend',
-'django.contrib.auth.backends.ModelBackend',
-)
-ANONYMOUS_USER_NAME = 'anonymous'
 
-AUTH_PROFILE_MODULE = 'video_bank.Customer'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -139,7 +132,7 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
-            
+
 MEDIA_URL = '/media/'
 
 STATICFILES_DIRS = [
@@ -149,4 +142,16 @@ STATICFILES_DIRS = [
 LOGIN_URL = '/login'
 SITE_ID = 1
 
-USE_DJANGO_JQUERY = True
+
+AUTHENTICATION_BACKENDS = (
+'userena.backends.UserenaAuthenticationBackend',
+'guardian.backends.ObjectPermissionBackend',
+'django.contrib.auth.backends.ModelBackend',
+)
+ANONYMOUS_USER_NAME = 'anonymous'
+
+AUTH_PROFILE_MODULE = 'video_bank.Customer'
+
+USERENA_ACTIVATION_REQUIRED = False
+USERENA_SIGNIN_AFTER_SIGNUP = True
+USERENA_SIGNIN_REDIRECT_URL = "/"
