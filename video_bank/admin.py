@@ -12,7 +12,7 @@ class MovieGenreAdmin(admin.ModelAdmin):
 
 
 class MovieAdmin(admin.ModelAdmin):
-    list_display = ( 'title', 'slug', 'synopsis', 'actors', 'director', 'picture', 'release_date', 'rented', 'trailer_url' )
+    list_display = ( 'title', 'slug', 'actors', 'director', 'picture', 'release_date', 'rented' )
 
     fieldsets = (
         ('General', {
@@ -31,7 +31,7 @@ class MovieAdmin(admin.ModelAdmin):
 
 
 class MovieRentAdmin(admin.ModelAdmin):
-    list_display = (  'movie', 'checkout_date', 'return_date' )
+    list_display = (  'movie', 'customer', 'checkout_date', 'return_date' )
 
     list_filter = ( 'movie', 'checkout_date', 'return_date' )
 

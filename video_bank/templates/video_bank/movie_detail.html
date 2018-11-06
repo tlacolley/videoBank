@@ -59,8 +59,19 @@
         <!-- Status Widget -->
         <div class="card my-4">
           <h5 class="card-header">Status: </h5>
-          <div class="card-body">
-            <p>rent</p>
+          <div class="card-body" id="cardStatus">
+            {% if movie.rented == False %}
+            <div class="d-flex justify-content-between">
+                <h4>Movie availlable </h4>
+                <form class="formRent" id="formRent" action="." method="post">{% csrf_token %}
+                    <input type="hidden" name="customer_id" value="{{user.id}}">
+                    <input type="hidden" name="movie_id" value="{{movie.id}}">
+                    <button type="button" id="btnRentForm" name="btnRentForm">Rent</button>
+                </form>
+            </div>
+            {% else %}
+            <h4>Movie Rent </h4>
+            {% endif %}
           </div>
         </div>
 
@@ -88,7 +99,26 @@
     </div>
     <!-- /.row -->
 
+    {% block script %}
 
+
+        $(document).ready(function(){
+
+            $('#btnRentForm').click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "{% url 'rent_movie' movie.slug%}",
+                    dataType: "json",
+                    data: $("#formRent").serialize(),
+                    success: function(response) {
+                        $('#cardStatus').html('<h4>Movie Rent </h4>')
+                        console.log("plop")
+                    }
+                })
+            })
+        })
+
+    {% endblock %}
 
 
 {% endblock %}
