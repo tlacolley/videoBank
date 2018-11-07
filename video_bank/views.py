@@ -8,6 +8,7 @@ from django.template.loader import render_to_string
 from django.urls import reverse, reverse_lazy
 from django.db.models import Q
 
+from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
 
@@ -28,13 +29,17 @@ class IndexView(ListView):
 class MovieDetailView(DetailView):
     model = Movie
 
+
 class CustomerHistoricView(ListView):
     model = MovieRent
+
     def get_queryset(self, **kwargs):
-        currentCustomer = 5
-        queryset = self.objects.filter(customer=currentCustomer)
+        currentCustomer = Customer.objects.get(id=self.request.user.id)
+        return MovieRent.objects.filter(customer=currentCustomer)
+
 
 class MovieRentView(View):
+
      def post(self, request, **kwargs):
         customer_id =  request.POST.get('customer_id')
         movie_id =  request.POST.get('movie_id')

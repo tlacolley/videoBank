@@ -47,3 +47,5 @@ class MovieRent(models.Model):
     movie = models.ForeignKey(Movie, null=True, blank=True)
     checkout_date = models.DateTimeField()
     return_date = models.DateTimeField()
+
+MovieRent.objects.order_by("-date")
