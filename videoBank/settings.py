@@ -38,8 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'django_extensions',
     'video_bank',
-
+    'parler',
     'userena',
     'guardian',
     'easy_thumbnails',

@@ -40,7 +40,7 @@ class CustomerHistoricView(ListView):
 
 class MovieRentView(View):
 
-     def post(self, request, **kwargs):
+     def post(self, request, **kwargs): 
         customer_id =  request.POST.get('customer_id')
         movie_id =  request.POST.get('movie_id')
         rent_status =  request.POST.get('status_rent')

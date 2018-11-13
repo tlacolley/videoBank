@@ -18,14 +18,16 @@
               <h4 class="card-title">
                 <a href="{% url 'movie_detail' rent.movie.slug %}" class="text-danger">{{ rent.movie.title }}</a>
               </h4>
-              <p class="card-text">Customer: {{ rent.customer}} </p>
+              <p class="card-text">Customer: {{ rent.customer.username}} </p>
               <p class="card-text">Checkout: {{ rent.checkout_date}} </p>
               <p class="card-text">Return: {{ rent.return_date}} </p>
 
             </div>
             <div class="actionRent d-flex flex-column  justify-content-around">
+                {% if A and not B %}
                 <button type="button" class="btn  btn-outline-danger" name="btnUnRent">Unrent</button>
                 <button type="button" class="btn  btn-outline-danger" name="btnSendMail">Send Mail</button>
+                {% endif %}
             </div>
           </div>
         </div>
