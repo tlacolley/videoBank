@@ -17,6 +17,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
+from django.conf.urls.i18n import i18n_patterns
 
 from django.contrib.auth import views as auth_views
 from django.shortcuts import render, redirect
@@ -28,9 +29,14 @@ from userena import views as userena_views
 
 from video_bank.views import *
 
+urlpatterns = i18n_patterns(
 
-urlpatterns = [
+
     url(r'^admin/', admin.site.urls),
+
+
+)
+urlpatterns += [
     url(r'^login/$', auth_views.LoginView.as_view(), name="login_user"),
     url(r'^logout/$', auth_views.LogoutView.as_view(next_page="/"), name="logout_user"),
 

@@ -39,16 +39,3 @@ class MovieRentAdmin(admin.ModelAdmin):
 admin.site.register(MovieGenre, MovieGenreAdmin)
 admin.site.register(Movie, MovieAdmin)
 admin.site.register(MovieRent, MovieRentAdmin)
-
-# PARLER_LANGUAGES = {
-#     ID: (
-#         {'code': 'en',},
-#         {'code': 'en-us',},
-#         {'code': 'it',},
-#         {'code': 'nl',},
-#     ),
-#     'default': {
-#         'fallback': 'en',             # defaults to PARLER_DEFAULT_LANGUAGE_CODE
-#         'hide_untranslated': False,   # the default; let .active_translations() return fallbacks too.
-#     }
-# }
