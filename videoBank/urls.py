@@ -97,5 +97,4 @@ urlpatterns = [
 
     url(r'^customer/(?P<username>[\@\.\+\w-]+)/historic/$', CustomerHistoricView.as_view(), name="customer_historic"),
 
-
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

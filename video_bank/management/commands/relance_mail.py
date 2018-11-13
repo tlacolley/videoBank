@@ -2,7 +2,10 @@ from django.core.management.base import BaseCommand
 from django.utils import timezone
 import datetime
 from video_bank.models import MovieRent, Customer
-from django.core.mail import EmailMessage
+from django.core.mail import EmailMessage, EmailMultiAlternatives
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
+
 
 class Command(BaseCommand):
     help = "My shiny new management command."
@@ -20,16 +23,17 @@ class Command(BaseCommand):
                 customer_mail = customer.user.email
                 customer_l_name =  customer.user.last_name
                 customer_f_name = customer.user.first_name
-                message = "Bonjour Madame/Monsieur %s %s the rent time for your movie %s is now finish. Please return this movie in quickly delay" %(customer_f_name, customer_l_name, movie_title)
+
+                text_content = render_to_string('video_bank/mails/resend_customer.txt', {'movie_rent':movie})
+                html_content = render_to_string('video_bank/mails/resend_customer.html', {'movie_rent':movie})
                 to_emails = [str(customer_mail)]
-                subject = "Movie to return" + customer_f_name + customer_l_name
-                email = EmailMessage(subject, message, from_email='thomaslacolley@gmail.com', to=to_emails)
+                subject = "Movie to return:" + customer_f_name +" "+ customer_l_name
+                
+                email = EmailMultiAlternatives(subject, text_content, from_email='thomaslacolley@gmail.com', to=('thomaslacolley@gmail.com',))
 
-                email.encoding = 'us-ascii'
+                email.attach_alternative(html_content, "text/html")
                 email.send()
-
 
 
             else :
                 print "Ok all customers have times"
-            # print estimate_rent_date

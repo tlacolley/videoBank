@@ -1,0 +1,7 @@
+Bonjour Madame/Monsieur {{movie_rent.customer.user.first_name}}
+{{movie_rent.customer.user.last_name}}
+
+
+The rent time for your movie {{movie_rent.movie.title}} is now finish.
+Please return this movie in quickly delay
+King regards.
