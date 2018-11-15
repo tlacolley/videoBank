@@ -1,9 +1,11 @@
 {% extends 'video_bank/base.html'%}
+{% load static i18n %}
+{% load static parler_tags %}
 
 {% block content %}
 
 <!-- Page Heading -->
-    <h1 class="my-4 text-center">Login</h1>
+    <h1 class="my-4 text-center">{% trans 'Login' %}</h1>
     <div class="row justify-content-center ">
         <form action="." method="post" class="login">
             {% csrf_token %}
@@ -13,7 +15,7 @@
 
             {{ form.password.label }}
             {{ form.password }}
-            <button type="submit">Login</button>
+            <button type="submit">{% trans 'Login' %}</button>
         </form>
 
     </div>

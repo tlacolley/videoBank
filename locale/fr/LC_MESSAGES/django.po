@@ -1,0 +1,258 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-15 14:46+0000\n"
+"PO-Revision-Date: 2018-11-15 15:55+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#: videoBank/settings.py:124
+msgid "English"
+msgstr "Anglais"
+
+#: videoBank/settings.py:125
+msgid "French"
+msgstr "Francais"
+
+#: video_bank/models.py:27
+msgid "title"
+msgstr "titre"
+
+#: video_bank/models.py:28
+msgid "slug"
+msgstr "slug"
+
+#: video_bank/models.py:29
+msgid "country"
+msgstr "pays"
+
+#: video_bank/models.py:30
+msgid "synopsis"
+msgstr "synopsis"
+
+#: video_bank/models.py:31
+msgid "trailer_url"
+msgstr "bande d annonce"
+
+#: video_bank/models.py:34
+msgid "actors"
+msgstr "acteurs"
+
+#: video_bank/models.py:35
+msgid "director"
+msgstr "realisateur"
+
+#: video_bank/models.py:36
+msgid "length"
+msgstr "duree"
+
+#: video_bank/models.py:37
+msgid "picture"
+msgstr "image"
+
+#: video_bank/models.py:38
+msgid "release_date"
+msgstr "date de sortie"
+
+#: video_bank/models.py:39
+msgid "rented"
+msgstr "louer"
+
+#: video_bank/models.py:40
+msgid "genre"
+msgstr "genre"
+
+#: video_bank/templates/registration/login.html:6
+#: video_bank/templates/registration/login.html:16
+#: video_bank/templates/video_bank/header.html:36
+msgid "Login"
+msgstr "S identifier"
+
+#: video_bank/templates/userena/customer_detail.html:23
+msgid "View profile"
+msgstr "Profile vue"
+
+#: video_bank/templates/userena/customer_detail.html:24
+msgid "Edit details"
+msgstr "Modification details"
+
+#: video_bank/templates/userena/customer_detail.html:25
+msgid "Change password"
+msgstr "Changer mot de passe"
+
+#: video_bank/templates/userena/customer_detail.html:26
+msgid "Change email"
+msgstr "Changer email"
+
+#: video_bank/templates/userena/customer_detail.html:27
+msgid "Historic"
+msgstr "Historique"
+
+#: video_bank/templates/userena/customer_detail.html:40
+msgid "Your mugshot"
+msgstr "Miniature"
+
+#: video_bank/templates/userena/customer_detail.html:44
+msgid "Name"
+msgstr "Nom"
+
+#: video_bank/templates/userena/customer_detail.html:48
+msgid "Email"
+msgstr "Email"
+
+#: video_bank/templates/userena/customer_detail.html:52
+msgid "Age"
+msgstr "Age"
+
+#: video_bank/templates/userena/customer_detail.html:56
+msgid "Website"
+msgstr "Site web"
+
+#: video_bank/templates/userena/customer_detail.html:60
+msgid "Location"
+msgstr "Adresse"
+
+#: video_bank/templates/userena/customer_detail.html:64
+msgid "About me"
+msgstr "A propos de moi"
+
+#: video_bank/templates/userena/signup.html:13
+#: video_bank/templates/userena/signup.html:30
+msgid "Signup"
+msgstr "S inscrire"
+
+#: video_bank/templates/video_bank/base.html:8
+#: video_bank/templates/video_bank/header.html:7
+msgid "Video Bank"
+msgstr "Video Club"
+
+#: video_bank/templates/video_bank/header.html:14
+msgid "Home"
+msgstr "Accueil"
+
+#: video_bank/templates/video_bank/header.html:19
+msgid "Create"
+msgstr "Cree"
+
+#: video_bank/templates/video_bank/header.html:22
+msgid "User List"
+msgstr "Liste d utilisateur"
+
+#: video_bank/templates/video_bank/header.html:26
+msgid "Account"
+msgstr "Compte"
+
+#: video_bank/templates/video_bank/header.html:28
+msgid "Register"
+msgstr "S identifier"
+
+#: video_bank/templates/video_bank/header.html:34
+msgid "Logout"
+msgstr "Deconnexion "
+
+#: video_bank/templates/video_bank/movie_confirm_delete.html:8
+msgid "Are you sure you want to delete"
+msgstr "Êtes vous sur de vouloir supprimer "
+
+#: video_bank/templates/video_bank/movie_detail.html:18
+msgid "By"
+msgstr "Par"
+
+#: video_bank/templates/video_bank/movie_detail.html:27
+msgid "Release"
+msgstr "Date de sortie"
+
+#: video_bank/templates/video_bank/movie_detail.html:28
+msgid "Country"
+msgstr "Pays"
+
+#: video_bank/templates/video_bank/movie_detail.html:30
+msgid "Length"
+msgstr "Duree"
+
+#: video_bank/templates/video_bank/movie_detail.html:31
+msgid "Actors"
+msgstr "Acteurs"
+
+#: video_bank/templates/video_bank/movie_detail.html:51
+msgid "Manage"
+msgstr "Gerer"
+
+#: video_bank/templates/video_bank/movie_detail.html:53
+msgid "Update"
+msgstr "Modifier"
+
+#: video_bank/templates/video_bank/movie_detail.html:54
+msgid "Delete"
+msgstr "Supprimer"
+
+#: video_bank/templates/video_bank/movie_detail.html:61
+msgid "Status"
+msgstr "Statut"
+
+#: video_bank/templates/video_bank/movie_detail.html:65
+msgid "Movie availlable "
+msgstr "Film disponible"
+
+#: video_bank/templates/video_bank/movie_detail.html:69
+msgid "Rent"
+msgstr "Louer"
+
+#: video_bank/templates/video_bank/movie_form.html:6
+msgid "Add a Movie"
+msgstr "Ajouter un film"
+
+#: video_bank/templates/video_bank/movie_form.html:14
+msgid "Add"
+msgstr "Ajouter"
+
+#: video_bank/templates/video_bank/movie_list.html:9
+msgid "Movies Listing"
+msgstr "Liste de Film"
+
+#: video_bank/templates/video_bank/movie_list.html:43
+msgid "Previous"
+msgstr "Précédent "
+
+#: video_bank/templates/video_bank/movie_list.html:58
+msgid "Next"
+msgstr "Suivant"
+
+#: video_bank/templates/video_bank/movierent_list.html:5
+msgid "Movies Rented"
+msgstr "Films loués"
+
+#: video_bank/templates/video_bank/movierent_list.html:21
+msgid "Customer"
+msgstr "Client"
+
+#: video_bank/templates/video_bank/movierent_list.html:22
+msgid "Checkout"
+msgstr "Date retour"
+
+#: video_bank/templates/video_bank/movierent_list.html:23
+msgid "Return"
+msgstr "Rendre "
+
+#: video_bank/templates/video_bank/movierent_list.html:28
+msgid "Unrent"
+msgstr "Disponible"
+
+#: video_bank/templates/video_bank/movierent_list.html:29
+msgid "Send Mail"
+msgstr "Envoie Mail"
+
+#~ msgid "Trailer"
+#~ msgstr "Bande d annonce"

@@ -4,7 +4,7 @@ import datetime
 from video_bank.models import MovieRent, Customer
 from django.core.mail import EmailMessage, EmailMultiAlternatives
 from django.template.loader import render_to_string
-from django.utils.html import strip_tags
+
 
 
 class Command(BaseCommand):

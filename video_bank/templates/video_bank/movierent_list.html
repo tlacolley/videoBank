@@ -1,8 +1,9 @@
 {% extends 'video_bank/base.html'%}
-
+{% load static i18n %}
+{% load static parler_tags %}
 {% block content %}
 <!-- Page Heading -->
-     <h1 class="my-4">Movies Rented </h1>
+     <h1 class="my-4">{% trans 'Movies Rented' %} </h1>
 
 
 
@@ -18,15 +19,15 @@
               <h4 class="card-title">
                 <a href="{% url 'movie_detail' rent.movie.slug %}" class="text-danger">{{ rent.movie.title }}</a>
               </h4>
-              <p class="card-text">Customer: {{ rent.customer.username}} </p>
-              <p class="card-text">Checkout: {{ rent.checkout_date}} </p>
-              <p class="card-text">Return: {{ rent.return_date}} </p>
+              <p class="card-text">{% trans 'Customer' %}: {{ rent.customer.username}} </p>
+              <p class="card-text">{% trans 'Checkout' %}: {{ rent.checkout_date}} </p>
+              <p class="card-text">{% trans 'Return' %}: {{ rent.return_date}} </p>
 
             </div>
             <div class="actionRent d-flex flex-column  justify-content-around">
                 {% if A and not B %}
-                <button type="button" class="btn  btn-outline-danger" name="btnUnRent">Unrent</button>
-                <button type="button" class="btn  btn-outline-danger" name="btnSendMail">Send Mail</button>
+                <button type="button" class="btn  btn-outline-danger" name="btnUnRent">{% trans 'Unrent' %}</button>
+                <button type="button" class="btn  btn-outline-danger" name="btnSendMail">{% trans 'Send Mail' %}</button>
                 {% endif %}
             </div>
           </div>

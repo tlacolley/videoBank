@@ -1,4 +1,6 @@
 {% extends 'video_bank/base.html'%}
+{% load static i18n %}
+{% load static parler_tags %}
 
 {% block content %}
 
@@ -13,7 +15,7 @@
 
         <!-- Author -->
         <p class="lead">
-          by
+          {% trans 'By' %}
           <a href="#">{{ movie.director }}</a>
         </p>
 
@@ -22,11 +24,11 @@
         <!-- Infos -->
         <div class="">
 
-        <p>Realise : {{ movie.release_date }} </p>
-        <p>Country : {{ movie.country }}</p>
+        <p>{% trans 'Release' %} : {{ movie.release_date }} </p>
+        <p>{% trans 'Country' %}: {{ movie.country }}</p>
     </div>
-        <p>Length : {{ movie.length }}</p>
-        <p>Actors : {{ movie.actors }}</p>
+        <p>{% trans 'Length' %}: {{ movie.length }}</p>
+        <p>{% trans 'Actors' %}: {{ movie.actors }}</p>
 
         <hr>
 
@@ -37,10 +39,8 @@
         <p class="lead">{{ movie.synopsis }}</p>
 
         <hr>
-        <a href="{{trailer_url}}"> Trailer </a>
-
-
-
+        
+        <iframe src="{{movie.trailer_url}}?controls=1" width="500" height="300" allowfullscreen></iframe>
 
       </div>
 
@@ -48,25 +48,25 @@
       <div class="col-md-4">
         <!-- Manage Widget -->
           <div class="card my-4">
-            <h5 class="card-header">Manage: </h5>
+            <h5 class="card-header">{% trans 'Manage' %}: </h5>
             <div class="card-body">
-              <a href="{% url 'movie_update' movie.slug %}">Update</a>
-              <a href="{% url 'movie_remove' movie.slug %}">Delete</a>
+              <a href="{% url 'movie_update' movie.slug %}">{% trans 'Update' %}</a>
+              <a href="{% url 'movie_remove' movie.slug %}">{% trans 'Delete' %}</a>
 
             </div>
           </div>
 
         <!-- Status Widget -->
         <div class="card my-4">
-          <h5 class="card-header">Status: </h5>
+          <h5 class="card-header">{% trans 'Status' %}: </h5>
           <div class="card-body" id="cardStatus">
             {% if movie.rented == False %}
             <div class="d-flex justify-content-between">
-                <h4>Movie availlable </h4>
+                <h4>{% trans 'Movie availlable ' %}</h4>
                 <form class="formRent" id="formRent" action="." method="post">{% csrf_token %}
                     <input type="hidden" name="customer_id" value="{{user.id}}">
                     <input type="hidden" name="movie_id" value="{{movie.id}}">
-                    <button type="button" id="btnRentForm" name="btnRentForm">Rent</button>
+                    <button type="button" id="btnRentForm" name="btnRentForm">{% trans 'Rent' %}</button>
                 </form>
             </div>
             {% else %}
@@ -99,6 +99,9 @@
     </div>
     <!-- /.row -->
 
+
+
+{% endblock %}
     {% block script %}
 
 
@@ -107,7 +110,7 @@
             $('#btnRentForm').click(function () {
                 $.ajax({
                     type: "POST",
-                    url: "{% url 'rent_movie' movie.slug%}",
+                    url: "{% url 'rent_movie' movie.slug %}",
                     dataType: "json",
                     data: $("#formRent").serialize(),
                     success: function(response) {
@@ -119,6 +122,3 @@
         })
 
     {% endblock %}
-
-
-{% endblock %}

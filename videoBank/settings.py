@@ -116,24 +116,24 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
 from django.utils.translation import ugettext_lazy as _
-LOCAL_PATH = (os.path.join(BASE_DIR,"locale"),)
+LOCALE_PATHS = (os.path.join(BASE_DIR, "locale"),)
 
-LANGUAGE_CODE = 'fr'
+LANGUAGE_CODE = 'en'
 
 LANGUAGES = [
-    ('fr', _('Francais')),
-    ('en', _('Anglais')),
+    ('en', _('English')),
+    ('fr', _('French')),
 
 
 ]
 
 PARLER_LANGUAGES = {
     1: (
-        {'code': 'fr',},
         {'code': 'en',},
+        {'code': 'fr',},
     ),
     'default': {
-        'fallback': 'fr',             # defaults to PARLER_DEFAULT_LANGUAGE_CODE
+        'fallback': 'en',             # defaults to PARLER_DEFAULT_LANGUAGE_CODE
         'hide_untranslated': False,   # the default; let .active_translations() return fallbacks too.
     }
 }

@@ -15,7 +15,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse, JsonResponse
 from django.views.generic.edit import View
 from django.views.generic import ListView, DetailView, CreateView
-
+from parler.views import TranslatableSlugMixin
 
 from .models import MovieGenre, Movie, Customer, MovieRent
 from .forms import *
@@ -26,7 +26,7 @@ class IndexView(ListView):
     model = Movie
 
 
-class MovieDetailView(DetailView):
+class MovieDetailView(TranslatableSlugMixin, DetailView):
     model = Movie
 
 
